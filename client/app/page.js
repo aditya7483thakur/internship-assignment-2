@@ -6,7 +6,7 @@ import axios from "axios";
 import Post from "./components/Post";
 import UploadForm from "./components/UploadForm";
 
-const socket = io("http://localhost:4000");
+const socket = io("https://internship-assignment-2-qpt2.onrender.com");
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
