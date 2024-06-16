@@ -14,6 +14,13 @@ export default function Login() {
         {
           username,
           password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json", // Ensure content type is JSON if required by backend
+            // Other headers as needed
+          },
+          withCredentials: true, // Important for CORS requests
         }
       );
       localStorage.setItem("user", JSON.stringify(response.data));

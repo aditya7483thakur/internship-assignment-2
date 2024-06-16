@@ -15,6 +15,9 @@ export default function Register() {
         {
           username,
           password,
+        },
+        {
+          withCredentials: true, // Ensure credentials are included in the request
         }
       );
       // Redirect to login page after successful registration
