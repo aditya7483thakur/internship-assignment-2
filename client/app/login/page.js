@@ -9,20 +9,10 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        "https://internship-assignment-2-qpt2.onrender.com/api/login",
-        {
-          username,
-          password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json", // Ensure content type is JSON if required by backend
-            // Other headers as needed
-          },
-          withCredentials: true, // Important for CORS requests
-        }
-      );
+      const response = await axios.post("http://localhost:4000/api/login", {
+        username,
+        password,
+      });
       localStorage.setItem("user", JSON.stringify(response.data));
       window.location.href = "/"; // Redirect to home page after successful login
     } catch (error) {

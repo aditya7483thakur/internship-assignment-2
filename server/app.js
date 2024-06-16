@@ -12,18 +12,13 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [
-      "http://localhost:3000",
-      "https://internship-assignment-2.vercel.app/",
-    ],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
   },
 });
 const port = 4000;
 
-const users = []; // In-memory storage
+const users = []; // In-memory storage for simplicity. Use a database in production.
 const posts = [
   {
     id: 4500,
@@ -90,7 +85,7 @@ app.get("/api/posts", (req, res) => {
 
 app.post("/api/upload", upload.single("photo"), (req, res) => {
   const { description } = req.body;
-  const photoUrl = `https://internship-assignment-2-qpt2.onrender.com/uploads/${req.file.filename}`;
+  const photoUrl = `http://localhost:4000/uploads/${req.file.filename}`;
   const post = {
     id: posts.length + 1,
     photoUrl,
