@@ -10,10 +10,13 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:4000/api/register", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://internship-assignment-2-qpt2.onrender.com/api/register",
+        {
+          username,
+          password,
+        }
+      );
       // Redirect to login page after successful registration
       window.location.href = "/login"; // You can use router.push('/login') if you're in a proper Next.js routing context
     } catch (error) {

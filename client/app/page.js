@@ -20,9 +20,11 @@ export default function Home() {
         router.push("/register");
       } else {
         setUser(storedUser);
-        axios.get("http://localhost:4000/api/posts").then((response) => {
-          setPosts(response.data);
-        });
+        axios
+          .get("https://internship-assignment-2-qpt2.onrender.com/api/posts")
+          .then((response) => {
+            setPosts(response.data);
+          });
 
         socket.on("newPost", (newPost) => {
           setPosts((prevPosts) => [newPost, ...prevPosts]);
