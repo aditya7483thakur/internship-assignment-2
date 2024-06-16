@@ -19,7 +19,32 @@ const io = new Server(server, {
 const port = 4000;
 
 const users = []; // In-memory storage for simplicity. Use a database in production.
-const posts = [];
+const posts = [
+  {
+    id: 4500,
+    photoUrl:
+      "https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Bubbles Post ",
+    likes: 89,
+    comments: [],
+  },
+  {
+    id: 4000,
+    photoUrl:
+      "https://images.unsplash.com/photo-1488509082528-cefbba5ad692?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Chatting girl",
+    likes: 53,
+    comments: [],
+  },
+  {
+    id: 5000,
+    photoUrl:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Mountains",
+    likes: 75,
+    comments: [],
+  },
+];
 
 app.use(cors());
 app.use(bodyParser.json());
